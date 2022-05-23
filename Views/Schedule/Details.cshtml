@@ -1,0 +1,141 @@
+﻿@using System.Net
+@using F1.Interfaces
+@using F1.Models
+@model F1.Models.Race
+@{
+    ViewBag.Title = Model.Name;
+}
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>
+                    @Model.Name
+                </h1>
+                <h2>
+                    @Model.Date
+                </h2>
+ 
+            </div>
+        </div>
+       
+    </div>
+<div class="container-fluid">
+
+  <section class="information">
+            
+    <div class="text parbase">
+
+        <h3><br>FORMULA 1 GRAND PRIX @Model.Name</h3>
+         <h3><br>RACE WEEKEND</h3>
+    </div>
+
+ </section>
+
+   <table class="stat-list">
+        <tbody>
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Race</span>
+        	
+        </th>
+        <td class="stat-value">@Model.RaceDate</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Qualifying</span>
+        	
+        </th>
+        <td class="stat-value">@Model.QualiDate</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Practice 3</span>
+        	
+        </th>
+        <td class="stat-value">@Model.P3Date</td>
+        
+    </tr>
+     
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Practice 2</span>
+        	
+        </th>
+        <td class="stat-value">@Model.P2Date</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Practice 1</span>
+        	
+        </th>
+        <td class="stat-value">@Model.P1Date</td>
+        
+    </tr>
+        </tbody>
+    </table>
+
+    @if (@Model.IsFinished == true){
+        <table class="stat-list">
+        <tbody>
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Winner</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Place1</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Place 2</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Place2</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Place 3</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Place3</td>
+        
+    </tr>
+        </tbody>
+    </table>
+
+    }
+
+</div>
+
+
+<div>
+    <img class="card-img-top" width="100" height="300" src="@Model.Img"> 
+</div>
+

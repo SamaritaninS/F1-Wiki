@@ -1,0 +1,50 @@
+﻿@using F1.Models
+@model IEnumerable<Team>
+@{
+    ViewData["Title"] = "Team Standings";
+}
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+                2022 Team Standings
+            </h1>
+             <p>
+               <a  asp-action="DriverStandings" asp-controller="Standings">Driver Standings</a>
+            </p>
+            <p>
+               <a asp-action="RaceResults" asp-controller="Standings">Race Results</a>
+            </p>
+        </div>
+    </div>
+
+    <table class="resultsarchive-table">
+    <thead>
+    <tr>
+        <th class="limiter"></th>
+        <th><abbr title="Position">Pos</abbr></th>
+        <th>Team</th>
+        <th><abbr title="Points">PTS</abbr></th>
+        <th class="limiter"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+         <tr>
+            <td class="limiter"></td>
+            <td class="dark">@item.Position</td>
+            <td>
+                <a class="dark" asp-action="Details" asp-controller="Teams" asp-route-id="@item.Id" >@item.Name</a>
+            </td>
+            <td class="dark bold">@item.Points</td>
+            <td class="limiter"></td>
+         </tr>
+        }
+    
+    </tbody>
+</table>
+
+

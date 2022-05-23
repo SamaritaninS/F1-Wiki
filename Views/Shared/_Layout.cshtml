@@ -1,0 +1,181 @@
+﻿@using Microsoft.AspNetCore.Identity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - F1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+     <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+    
+    <!-- STYLES -->
+   <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/fonts/fontello/css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="~/js/jquery.uniform/uniform.default.css">
+    <link rel="stylesheet" type="text/css" href="~/js/jquery.magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="~/js/jquery.fluidbox/fluidbox.css">
+    <link rel="stylesheet" type="text/css" href="~/js/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="~/js/selection-sharer/selection-sharer.css">
+    <link rel="stylesheet" type="text/css" href="~/js/responsive-image-gallery/elastislide.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/align.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/css/768.css">
+    <link rel="stylesheet" type="text/css" href="~/css/992.css">
+    
+    <!-- INITIAL SCRIPTS -->
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/js/modernizr.min.js"></script>
+</head>
+<body>
+    @*<header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="News" asp-action="Index">F1</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Schedule" asp-action="Index">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Standings" asp-action="DriverStandings">Standings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Teams" asp-action="Index">Teams</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Drivers" asp-action="Index">Drivers</a>
+                        </li>
+                        @if(User.IsInRole("admin")){
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>*@
+
+    <header id="masthead" class="site-header" role="banner">
+ 				
+                <!-- site-navigation -->
+                <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+                    
+                    <a class="menu-toggle"><span class="lines"></span></a>
+                    
+                    <!-- nav-menu -->
+                    <div class="nav-menu">
+                        <ul>
+                            <li><a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index">F1</a>
+                           
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index">News</a>
+                        </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Schedule" asp-action="Index">Schedule</a>
+                        </li>
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Standings" asp-action="DriverStandings">Standings</a>
+                        </li>
+                             <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Teams" asp-action="Index">Teams</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Drivers" asp-action="Index">Drivers</a>
+                        </li>
+                            @if (User.IsInRole("admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                               </li>
+                            }
+
+                            <li></li>
+                        </ul>
+                          <partial name="_LoginPartial" />
+                    </div>
+
+                    <!-- nav-menu -->
+                    
+                
+ 
+                    
+                </nav>
+               
+
+
+                
+        </header>
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+        <footer id="colophon" class="site-footer" role="contentinfo">
+     		
+            <!-- layout-medium -->
+            <div class="layout-medium">
+            	
+
+                <!-- footer-sidebar -->
+                <div class="footer-sidebar widget-area" role="complementary">
+    
+                    <!-- widget -->
+                    <aside class="widget widget_text">
+                      <h3 class="widget-title">F1 2022</h3>
+                    </aside>
+        
+                </div>
+
+                <div class="site-info">
+            	
+                <!-- layout-medium -->
+            	<div class="layout-medium">
+                
+            		<p>Created <em>by</em> Valentin Samsonov</p>
+                
+                </div>
+            	<!-- layout-medium -->
+            
+                </div>  
+
+            </div>
+
+          
+		</footer>
+
+    <script src="~/js/fastclick.js"></script>
+    <script src="~/js/jquery.fitvids.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.uniform/jquery.uniform.min.js"></script>
+    <script src="~/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/js/jquery.isotope.min.js"></script>
+    <script src="~/js/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/jquery.fluidbox/jquery.fluidbox.min.js"></script>
+    <script src="~/js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/js/readingTime.js"></script>
+    <script src="~/js/selection-sharer/selection-sharer.js"></script>
+    <script src="~/js/responsive-image-gallery/r-gallery.js"></script>
+    <script src="~/js/main.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

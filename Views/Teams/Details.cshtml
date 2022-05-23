@@ -1,0 +1,138 @@
+﻿@using System.Net
+@using F1.Interfaces
+@using F1.Models
+@model F1.Models.Team
+@{
+    ViewBag.Title = Model.Name;
+}
+
+
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>
+                    @Model.Name
+                </h1>
+                <div class="brand-logo">
+  
+            <img src=@Model.Logo width="200" height="100">
+
+             </div>
+            </div>
+        </div>
+       
+    </div>
+
+   <table class="stat-list">
+        <tbody>
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Full Team Name</span>
+        	
+        </th>
+        <td class="stat-value">@Model.FullName</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Base</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Base</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Team Chief</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Chief</td>
+        
+    </tr>
+     
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Power Unit</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Power</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">First Team Entry</span>
+        	
+        </th>
+        <td class="stat-value">@Model.TeamEntry</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">World Championships</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Championships</td>
+        
+    </tr>
+
+
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Pole Positions</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Poles</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Fastest Laps</span>
+        	
+        </th>
+        <td class="stat-value">@Model.FastesLaps</td>
+        
+    </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+<div>
+    <img class="card-img-top" alt="Bootstrap Thumbnail First" src="@Model.Img"> 
+</div>
+
+ <section class="information">
+            
+    <div class="text parbase">
+
+        <h3><br>In profile</h3>
+    
+    </div>
+
+    <div class="text parbase">
+    <p>@Model.Description</p>
+    </div>
+
+ </section>

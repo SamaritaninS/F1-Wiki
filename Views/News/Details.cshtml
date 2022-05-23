@@ -1,0 +1,52 @@
+﻿@using System.Net
+@using F1.Interfaces
+@using F1.Models
+@model F1.Models.New
+@{
+    ViewBag.Title = Model.Name;
+}
+
+
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>
+                    @Model.Name
+                </h1>
+            </div>
+        </div>
+       
+    </div>
+     @if(User.IsInRole("editor")){
+    <div class="col-md-2">
+            <a type="button" class="btn btn-block btn-outline-warning" asp-action="Edit" asp-controller="News" asp-route-id="@Model.Id">
+                Edit
+            </a>
+            <a type="button" class="btn btn-block btn-outline-danger" asp-action="Delete" asp-controller="News" asp-route-id="@Model.Id">
+                Delete
+            </a>
+    </div>
+     }
+</div>
+
+
+ <section class="information">
+
+    <div class="text parbase">
+    <p>@Model.Block1</p>
+    </div>
+
+ </section>
+
+<div>
+    <img class="card-img-top" src="@Model.Img"> 
+</div>
+
+ <section class="information">
+
+    <div class="text parbase">
+    <p>@Model.Block2</p>
+    </div>
+
+ </section>

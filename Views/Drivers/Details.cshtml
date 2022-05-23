@@ -1,0 +1,121 @@
+﻿@using System.Net
+@using F1.Models
+@model F1.Models.Driver
+@{
+    ViewBag.Title = Model.Name;
+}
+
+
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>
+                    @Model.Name
+                </h1>
+                <div class="brand-logo">
+  
+            <img src=@Model.Helmet width="150" height="100">
+
+             </div>
+            </div>
+        </div>
+       
+    </div>
+
+   
+    <table class="stat-list">
+        <tbody>
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Team</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Team</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Country</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Country</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Podiums</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Podiums</td>
+        
+    </tr>
+   
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Grands Prix entered</span>
+        	
+        </th>
+        <td class="stat-value">@Model.Races</td>
+        
+    </tr>
+
+            
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">World Championships</span>
+        	
+        </th>
+        
+        <td class="stat-value">@Model.Championships</td>
+    </tr>
+
+       
+                
+    <tr>
+        <th scope="row" class="stat-key">
+        	
+        	<span class="text">Date of birth</span>
+        	
+        </th>
+        <td class="stat-value">@Model.DateOfBirth</td>
+        
+    </tr>
+
+
+        </tbody>
+    </table>
+
+
+
+</div>
+
+
+<div>
+    <img class="card-img-top" alt="Bootstrap Thumbnail First" src="@Model.Img"> 
+</div>
+
+ <section class="information">
+            
+    <div class="text parbase">
+
+        <h3><br>Biography</h3>
+    
+    </div>
+
+    <div class="text parbase">
+    <p>@Model.Description</p>
+    </div>
+
+ </section>

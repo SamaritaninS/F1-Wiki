@@ -1,0 +1,79 @@
+﻿@using F1.Models
+@model IEnumerable<Driver>
+@{
+    ViewData["Title"] = "Drivers";
+}
+
+
+ @*   <div class="row">
+        <div class="col-md-12">
+            <h3>
+                F1 Drivers 2022
+            </h3>
+            
+            <div class="row">
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" alt="Bootstrap Thumbnail First" src="@item.Preview">
+
+                            <div class="card-block">
+                                <h5 class="card-title">
+                                    @item.Name
+                                </h5>
+                                <p class="card-title">
+                                    @item.Points PTS
+                                </p>
+                                <p align="center">
+                                    <a class="btn btn-primary" asp-action="Details" asp-controller="Drivers" asp-route-id="@item.Id">About Driver</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+                <div class="row">
+             </div>
+        </div>
+    </div>*@
+
+      <h1>
+                F1 Drivers 2022
+      </h1>
+
+    <div class="masonry blog-masonry" data-layout="masonry" data-item-width="340">
+                @foreach (var item in Model)
+                {
+                            
+                            <!-- .hentry -->
+                            <article class="hentry post format-video">
+                            
+                                <!-- .featured-image -->
+                                <div class="featured-image">
+                                    <img src="@item.Preview">
+                                </div>
+                                <!-- .featured-image -->
+                                
+                                
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a asp-action="Details" asp-controller="Drivers" asp-route-id="@item.Id">@item.Name</a></h1>
+                                    
+                                  <p>
+                                       @item.Points PTS
+                                  </p>
+      
+                                </header>
+                              
+                                
+                                
+                            </article>
+                }
+    </div>
+
+
